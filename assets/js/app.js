@@ -35,9 +35,9 @@ const $minutes = document?.querySelector(".time__minutes");
 const $seconds = document?.querySelector(".time__seconds");
 
 // вызываем функцию countdownTimer
-// countdownTimer();
+countdownTimer();
 // вызываем функцию countdownTimer каждую секунду
-// timerId = setInterval(countdownTimer, 1000);
+timerId = setInterval(countdownTimer, 1000);
 
 // =========================== CHART ===========================
 const chart1 = document.getElementById("chart1");
