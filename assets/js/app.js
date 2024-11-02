@@ -35,9 +35,11 @@ const $minutes = document?.querySelector(".time__minutes");
 const $seconds = document?.querySelector(".time__seconds");
 
 // вызываем функцию countdownTimer
-countdownTimer();
 // вызываем функцию countdownTimer каждую секунду
-timerId = setInterval(countdownTimer, 1000);
+if (btnStart) {
+  countdownTimer();
+  timerId = setInterval(countdownTimer, 1000);
+}
 
 // =========================== CHART ===========================
 const chart1 = document.getElementById("chart1");
@@ -52,7 +54,8 @@ const labels = [
   22, 23,
 ];
 const data1 = [
-  0, 68, 60, 0, 40, 15, 50, 0, 8, 60, 15, 64, 30, 35, 5, 50, 40, 0, 0, 0, 0, 0, 0, 0,
+  0, 68, 60, 0, 40, 15, 50, 0, 8, 60, 15, 64, 30, 35, 5, 50, 40, 0, 0, 0, 0, 0,
+  0, 0,
 ];
 
 const data2 = [
@@ -102,9 +105,9 @@ function createChart(elementId, data, titleChart) {
   });
 }
 
-createChart(chart1, data2, "Почасовая загрузка ZBS-320-8IR");
-createChart(chart2, data2, "Почасовая загрузка ZBS-320-8IR");
-createChart(chart3, data2, "Почасовая загрузка ZBS-320-8IR");
-createChart(chart4, data2, "Почасовая загрузка ZBS-320-8IR");
-createChart(chart5, data1, "Почасовая загрузка ZBS-320-8IR");
-createChart(chart6, data1, "Почасовая загрузка ZBS-320-8IR");
+chart1 && createChart(chart1, data2, "Почасовая загрузка ZBS-320-8IR");
+chart2 && createChart(chart2, data2, "Почасовая загрузка ZBS-320-8IR");
+chart3 && createChart(chart3, data2, "Почасовая загрузка ZBS-320-8IR");
+chart4 && createChart(chart4, data2, "Почасовая загрузка ZBS-320-8IR");
+chart5 && createChart(chart5, data1, "Почасовая загрузка ZBS-320-8IR");
+chart6 && createChart(chart6, data1, "Почасовая загрузка ZBS-320-8IR");
